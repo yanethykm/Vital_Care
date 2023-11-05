@@ -3,7 +3,7 @@
 ---------------------------------/
 CREATE TABLE Persona (
     ID INT PRIMARY KEY,
-    NIT_Cedula VARCHAR(15) NOT NULL,
+    Nit_Cedula INT NOT NULL,
     Nombre_RazonSocial VARCHAR(255) NOT NULL,
     Apellido VARCHAR(255),
     Direccion VARCHAR(255),
