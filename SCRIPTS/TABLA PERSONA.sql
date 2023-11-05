@@ -9,7 +9,8 @@ CREATE TABLE Persona (
     Direccion VARCHAR(255),
     Telefono VARCHAR(10),
     Email VARCHAR(255),
-    Ciudad VARCHAR(50)
+    Ciudad VARCHAR(50),
+    TipoDocumento VARCHAR(20)
 );
 ----- SECUENCIA PARA EL AUTOINCREMENTABLE ID ---/
 CREATE SEQUENCE Persona_ID_Seq
