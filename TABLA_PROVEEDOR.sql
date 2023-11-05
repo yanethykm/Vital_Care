@@ -3,7 +3,6 @@
 ------------------------------------------/
 CREATE TABLE Proveedor (
     ID INT PRIMARY KEY,
-    Estado VARCHAR(255),
     IdPersona INT,
     FOREIGN KEY (IdPersona) REFERENCES Persona(ID)
 );
