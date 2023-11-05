@@ -1,7 +1,7 @@
 ------------------------------------------/
 --------- TABLA PROVEEDOR ----------------/
 ------------------------------------------/
-CREATE TABLE CLIENTE (
+CREATE TABLE Cliente (
     ID INT PRIMARY KEY,
     IdPersona INT,
     FOREIGN KEY (IdPersona) REFERENCES Persona(ID)
