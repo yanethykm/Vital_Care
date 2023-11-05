@@ -89,13 +89,13 @@ END sp_List_Persona;
 /
 
 BEGIN
-    sp_Insert_Persona('1061771004', 'DIEGO FERNANDO', 'ALZATE', 'CALLE 11', '3127444096', 'diegoalzate.0207@gmail.com', 'CEDULA DE CIUDADANIA');
+    sp_Insert_Persona('1061771004', 'DIEGO', 'ALZATE', 'CALLE 12', '3127444096', 'diegoalzate.0207@gmail.com', 'CEDULA DE CIUDADANIA');
 END;
 
 BEGIN
-    sp_List_Personas;
+    sp_List_Persona;
 END;
 
-
+select * from Persona
 
 
