@@ -60,18 +60,16 @@ END sp_Update_Vendedor;
 -------------------------------------------------------------------------------
 --------------- PROCEDIMIENTO ALMACENADO LIST ---------------------------------
 -------------------------------------------------------------------------------
-CREATE OR REPLACE PROCEDURE sp_List_Vendedor (
-    p_ID IN INT,
-    p_IdPersona OUT INT
-) AS
+CREATE OR REPLACE PROCEDURE sp_List_Vendedor AS
 BEGIN
-    SELECT IdPersona INTO p_IdPersona
-    FROM Vendedor
-    WHERE ID = p_ID;
-
+FOR VendedorRow IN (SELECT IdPersona FROM Vendedor) LOOP
+    DBMS_OUTPUT.PUT_LINE( 
+            ' | Id Vendedor: ' || VendedorRow.IdPersona
+        );
+    END LOOP;
     EXCEPTION
     WHEN NO_DATA_FOUND THEN
-        DBMS_OUTPUT.PUT_LINE('No se encontró un vendedor con el ID ' || p_ID);
+        DBMS_OUTPUT.PUT_LINE('No se encontraron usuarios.');
     WHEN OTHERS THEN
         RAISE;
 END sp_List_Vendedor;
