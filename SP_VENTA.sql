@@ -2,13 +2,12 @@
 ----------- PROCEDIMIENTO ALMACENADO INSERT ------------
 --------------------------------------------------------
 CREATE OR REPLACE PROCEDURE sp_Insert_Venta (
-    p_Fecha IN DATE,
     p_IdCliente IN INT,
     p_IdVendedor IN INT
 ) AS
 BEGIN
     INSERT INTO Venta (Fecha, IdCliente, IdVendedor)
-    VALUES (p_Fecha, p_IdCliente, p_IdVendedor);
+    VALUES (SYSDATE, p_IdCliente, p_IdVendedor);
     
     COMMIT;
 EXCEPTION
