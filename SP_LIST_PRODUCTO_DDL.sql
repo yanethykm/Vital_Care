@@ -8,6 +8,7 @@ BEGIN
             p.Descripcion AS "Descripcion",
             p.PrecioVenta AS "Precio de Venta",
             p.CantidadMinima AS "Cantidad Minima",
+            p.Cantidad AS "Cantidad Existente",
             c.Categoria AS "Categoria",
             PVendedor.nombre_razonsocial AS "Nombre del Proveedor",
             PVendedor.apellido AS "Apellido del Proveedor"
@@ -23,6 +24,7 @@ BEGIN
             ', Descripcion: ' || producto."Descripcion" ||
             ', Precio de Venta: ' || producto."Precio de Venta" ||
             ', Cantidad Minima: ' || producto."Cantidad Minima" ||
+            ', Cantidad Existente: ' || producto."Cantidad Existente" ||
             ', Categoria: ' || producto."Categoria" ||
             ', Nombre del Proveedor: ' || producto."Nombre del Proveedor" ||
             ', Apellido del Proveedor: ' || producto."Apellido del Proveedor"
