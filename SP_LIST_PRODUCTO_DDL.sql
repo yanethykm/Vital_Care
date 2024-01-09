@@ -6,9 +6,7 @@ BEGIN
             p.ID AS "Codigo Producto",
             p.Producto AS "Producto",
             p.Descripcion AS "Descripcion",
-            p.PrecioCompra AS "Precio de Compra",
             p.PrecioVenta AS "Precio de Venta",
-            p.Cantidad AS "Cantidad",
             p.CantidadMinima AS "Cantidad Minima",
             c.Categoria AS "Categoria",
             PVendedor.nombre_razonsocial AS "Nombre del Proveedor",
@@ -23,9 +21,7 @@ BEGIN
             'Codigo Producto: ' || producto."Codigo Producto" ||
             ', Producto: ' || producto."Producto" ||
             ', Descripcion: ' || producto."Descripcion" ||
-            ', Precio de Compra: ' || producto."Precio de Compra" ||
             ', Precio de Venta: ' || producto."Precio de Venta" ||
-            ', Cantidad: ' || producto."Cantidad" ||
             ', Cantidad Minima: ' || producto."Cantidad Minima" ||
             ', Categoria: ' || producto."Categoria" ||
             ', Nombre del Proveedor: ' || producto."Nombre del Proveedor" ||
