@@ -2,6 +2,7 @@
 ------------------- PROCEDIMIENTO ALMACENADO INSERT ---------------------------
 -------------------------------------------------------------------------------
 CREATE OR REPLACE PROCEDURE sp_Insert_Producto (
+    p_IdProducto IN INT,
     p_Producto IN VARCHAR,
     p_Descripcion IN VARCHAR,
     p_PrecioCompra IN INT,
@@ -12,8 +13,8 @@ CREATE OR REPLACE PROCEDURE sp_Insert_Producto (
     p_Cantidad IN INT
 ) AS
 BEGIN
-    INSERT INTO Producto (Producto, Descripcion, PrecioCompra, PrecioVenta, CantidadMinima, IdCategoria, IdProveedor, Cantidad)
-    VALUES (p_Producto, p_Descripcion, p_PrecioCompra, p_PrecioVenta, p_CantidadMinima, p_IdCategoria, p_IdProveedor, p_Cantidad);
+    INSERT INTO Producto (ID, Producto, Descripcion, PrecioCompra, PrecioVenta, CantidadMinima, IdCategoria, IdProveedor, Cantidad)
+    VALUES (p_IdProducto, p_Producto, p_Descripcion, p_PrecioCompra, p_PrecioVenta, p_CantidadMinima, p_IdCategoria, p_IdProveedor, p_Cantidad);
     
     COMMIT;
 EXCEPTION
@@ -64,7 +65,8 @@ END sp_Update_Producto;
 -------------------------------------------------------------------------------
 CREATE OR REPLACE PROCEDURE sp_List_Producto AS
 BEGIN
-    FOR ProductoRow IN (SELECT Producto, Descripcion, PrecioCompra, PrecioVenta, CantidadMinima, IdCategoria, IdProveedor, Cantidad FROM Producto) LOOP
+    FOR ProductoRow IN (SELECT ID, Producto, Descripcion, PrecioCompra, PrecioVenta, CantidadMinima, IdCategoria, IdProveedor, Cantidad FROM Producto) LOOP
+        DBMS_OUTPUT.PUT_LINE('Código: ' || ProductoRow.ID);
         DBMS_OUTPUT.PUT_LINE('Nombre del Producto: ' || ProductoRow.Producto);
         DBMS_OUTPUT.PUT_LINE('Descripción del Producto: ' || ProductoRow.Descripcion);
         DBMS_OUTPUT.PUT_LINE('Precio de Compra: ' || ProductoRow.PrecioCompra);
