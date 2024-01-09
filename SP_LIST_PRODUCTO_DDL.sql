@@ -3,6 +3,7 @@ AS
 BEGIN
     FOR producto IN (
         SELECT
+            p.ID AS "Codigo Producto",
             p.Producto AS "Producto",
             p.Descripcion AS "Descripcion",
             p.PrecioCompra AS "Precio de Compra",
@@ -19,7 +20,8 @@ BEGIN
     ) LOOP
         -- Imprimir o procesar cada fila según sea necesario
         DBMS_OUTPUT.PUT_LINE(
-            'Producto: ' || producto."Producto" ||
+            'Codigo Producto: ' || producto."Codigo Producto" ||
+            ', Producto: ' || producto."Producto" ||
             ', Descripcion: ' || producto."Descripcion" ||
             ', Precio de Compra: ' || producto."Precio de Compra" ||
             ', Precio de Venta: ' || producto."Precio de Venta" ||
